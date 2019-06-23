@@ -1,0 +1,35 @@
+<ion-grid>
+    <ion-row justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+        <div text-center>
+          <h4>Connexion</h4>
+        </div>
+        <form [formGroup]="loginform" (ngSubmit)="login()" method="post">
+          <div padding>
+            
+            <ion-item>
+              <ion-input [(ngModel)]="loginModel.username"  formControlName="username" type="username"  placeholder="Nom d'utilisateur"></ion-input>
+            </ion-item>
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+              <div *ngIf="f.username.errors.required">Le nom d'utilisateur est réquis</div>
+            </div>
+            <ion-item>
+              <ion-input [(ngModel)]="loginModel.password"  formControlName="password" type="password" placeholder="Mot de passe"></ion-input>
+            </ion-item>
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Le mot de passe est réquis</div>
+              </div>
+          </div>
+        
+          <div padding>
+            <ion-button type="submit" size="medium" expand="full">Connexion</ion-button>
+          </div>
+        </form>
+        <div text-center>
+            <ion-button size="medium" expand="full" fill="clear" (click)="inscription()" >S'inscrire</ion-button>
+          </div>
+      </ion-col>
+    </ion-row>
+
+    
+  </ion-grid>

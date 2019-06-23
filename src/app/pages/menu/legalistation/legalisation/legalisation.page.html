@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Légalisation de document</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="legaform" method="post">
+  <ion-list>
+    <ion-item>
+      <ion-label>Type de document </ion-label>
+      <ion-select multiple="false" [(ngModel)]="legalisation.idTypeDoc" formControlName="idTypeDoc" >
+        <ion-select-option *ngFor="let item of type_doc"  value="{{item.idDocLega}}">
+          {{ item.libelle }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div *ngIf="submitted && f.idTypeDoc.errors" class="invalid-feedback">
+      <div *ngIf="f.idTypeDoc.errors.required">Veuillez choisir le type de document</div>
+    </div>
+
+
+    <ion-item>
+      <ion-avatar *ngIf="filePatho" slot="start">
+        <img [src]="filePatho" />
+      </ion-avatar>
+      <ion-label>Photo </ion-label>
+      <ion-icon slot="end" name="camera" (click)="captureImage()"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Nombre de copie :  </ion-label>
+      <ion-input [(ngModel)]="legalisation.nombre" type="number" formControlName="nombre"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+    <div *ngIf="f.nombre.errors.required">Renseigner le nombre de copie</div>
+  </div>
+
+
+  <ion-button (click)="sendDemandeLega(pathImgSendUpload)" [disabled]="!pathImgSendUpload" expand="block">
+    Envoyer
+  </ion-button>
+</form>
+</ion-content>

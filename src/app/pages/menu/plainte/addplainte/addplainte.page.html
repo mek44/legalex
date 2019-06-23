@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-icon name="arrow-back" slot="start" (click)="goback()"></ion-icon>
+    <ion-title>Ajout de Plainte</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+      <ion-list>
+        <ion-item-group>
+          <ion-item-divider>
+            <ion-label>Informations sur la personne Poursuivie</ion-label>
+          </ion-item-divider>
+
+         
+          <ion-item>
+            <ion-label position="floating">Nom et Prénoms</ion-label>
+            <ion-input clearInput=true   type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Lieu de résidence</ion-label>
+            <ion-input clearInput=true   type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Téléphone</ion-label>
+            <ion-input clearInput=true   type="text"></ion-input>
+          </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+            <ion-item-divider>
+              <ion-label>Inforaction</ion-label>
+            </ion-item-divider>
+  
+           
+            <ion-item>
+              <ion-label position="floating">Qualification de l'infraction</ion-label>
+              <ion-input clearInput=true   type="text"></ion-input>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label position="floating">Date et heure de l'infraction</ion-label>
+              <ion-input clearInput=true   type="text"></ion-input>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label position="floating">Preuve</ion-label>
+              <ion-input clearInput=true   type="file"></ion-input>
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+            <ion-item-divider>
+              <ion-label>Informations sur le témoins</ion-label>
+            </ion-item-divider>
+  
+           
+            <ion-item>
+              <ion-label position="floating">Nom et Prénoms</ion-label>
+              <ion-input clearInput=true   type="text"></ion-input>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label position="floating">Lieu de résidence</ion-label>
+              <ion-input clearInput=true   type="text"></ion-input>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label position="floating">Téléphone</ion-label>
+              <ion-input clearInput=true   type="text"></ion-input>
+            </ion-item>
+          </ion-item-group>
+      </ion-list>
+
+      <ion-button  expand="block">
+        <ion-icon slot="start" name="add"></ion-icon>
+        Ajouter Plainte
+      </ion-button>
+</ion-content>
