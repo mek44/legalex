@@ -120,7 +120,7 @@ export class AppComponent {
             outlet.pop();
             this.navCtrl.pop();
         } else if (
-          this.router.url === '/menu/legalisation' || 
+          this.router.url === '/menu/legalisation-liste' || 
           this.router.url === '/menu/plainte' || 
           this.router.url === '/menu/contrat' || 
           this.router.url === '/menu/professionnel-loi' || 

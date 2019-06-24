@@ -47,9 +47,9 @@ export class LoginPage implements OnInit {
   ngOnInit() {
     this.storage.get('lega_token').then(
       (val) => {
-        if(val != ""){
-          this.navCtrl.navigateRoot('/home');
-        }
+        if(val != null) {
+          this.navCtrl.navigateRoot('/home')
+        };
       }
     );
   }

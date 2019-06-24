@@ -1,3 +1,4 @@
+import { TransactionService } from './../../../../services/transaction/transaction.service';
 import { Storage } from '@ionic/storage';
 import { StockageService } from './../../../../services/stockage/stockage.service';
 import { LegalisationService } from './../../../../services/legalisation/legalisation.service';
@@ -40,7 +41,7 @@ export class LegalisationPage implements OnInit {
     private  formBuilder: FormBuilder,
     private webview: WebView,
     private camera: Camera,
-    private imageResizer: ImageResizer,
+    private transaction: TransactionService,
     private nav: NavController,
     private env: EnvService,
     private transfer: FileTransfer,
@@ -126,7 +127,13 @@ export class LegalisationPage implements OnInit {
       chunkedMode: false,
       headers: {}
     }
-    console.log("filepath :" + filepath.lastIndexOf('/'));
+    /**
+     * Création de la transaction
+     */
+  
+    this.transaction.createTransaction(this.legalisation.idUser,"legalisation",this.legalisation.nombre );
+    if(!this.transaction.valider)
+              return;
 
     fileTransfer.upload(filepath, this.env.API_URL+'legalisation/uploadFile/images', options)
       .then((data) => {
